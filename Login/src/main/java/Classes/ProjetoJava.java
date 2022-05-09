@@ -1,7 +1,7 @@
 
 package Classes;
 
-import Formulários.Login;
+import Telas.Login;
 
 /**
  *
