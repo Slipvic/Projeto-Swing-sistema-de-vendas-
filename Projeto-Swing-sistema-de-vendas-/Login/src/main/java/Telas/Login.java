@@ -4,7 +4,7 @@
  */
 package Telas;
 
-import Classes.Dados;
+import Classes.LoginData;
 import javax.swing.JOptionPane;
 
 /**

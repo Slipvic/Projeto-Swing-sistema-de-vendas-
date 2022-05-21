@@ -8,7 +8,7 @@ import java.text.ParseException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-
+import Classes.Dados;
 /**
  *
  * @author victor.hmoreira3
@@ -420,7 +420,19 @@ public class DadosCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_MasculinoActionPerformed
 
     private void avancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancarActionPerformed
-  
+        String nome = Nome.getText();
+        String cpf = CPF.getText();
+        String email = Email.getText();
+        String telefone = Telefone.getText();
+        String sexo = "";
+        if(Masculino.isSelected()){sexo = "Masculino";}
+        if(Feminino.isSelected()){sexo = "Feminino";}
+        if(NaoInformar.isSelected()){sexo = "Não Informado";}
+        String dataN = Data.getText();
+        String estadoC = EstadoCivil.getSelectedItem().toString();
+       validador();
+       Dados(nome, cpf, email, telefone, sexo, dataN, estadoC);
+        
     }//GEN-LAST:event_avancarActionPerformed
     public void validador(){
         if(this.Nome.getText().isEmpty()){
@@ -432,9 +444,20 @@ public class DadosCliente extends javax.swing.JFrame {
          this.CPF.requestFocus(); 
         }
          if(this.Email.getText().isEmpty()){
-         JOptionPane.showMessageDialog(null, "Por favor, informe seu nome completo.");
+         JOptionPane.showMessageDialog(null, "Por favor, informe seu email corretamente.");
          this.Email.requestFocus();
         }
+         if(this.Telefone.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Por favor, informe seu telefone com DDD.");
+         this.Telefone.requestFocus();
+        }
+         else if(!this.Masculino.isSelected() && !this.Feminino.isSelected() && !this.NaoInformar.isSelected()){
+         this.NaoInformar.requestFocus();
+        }
+         if(this.Data.getText().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Por favor, preencha sua data de nascimento.");
+         this.Data.requestFocus();
+        }     
     }
     /**
      * @param args the command line arguments
@@ -515,7 +538,6 @@ public class DadosCliente extends javax.swing.JFrame {
     private javax.swing.JButton VoltarButton;
     private javax.swing.JButton avancar;
     // End of variables declaration//GEN-END:variables
-
 
     }
 
