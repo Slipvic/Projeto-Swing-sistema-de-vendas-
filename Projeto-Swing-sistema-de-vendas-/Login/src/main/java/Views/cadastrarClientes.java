@@ -8,7 +8,8 @@ import java.text.ParseException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-import DAO.Cliente;
+
+import Model.Cliente;
 import Utils.validadorClientes;
 /**
  *

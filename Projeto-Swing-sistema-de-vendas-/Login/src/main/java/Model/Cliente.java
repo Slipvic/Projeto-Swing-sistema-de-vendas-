@@ -1,16 +1,57 @@
-package DAO;
+package Model;
 
 public class Cliente {
     
         //dados residenciais
-        public int CEP;
+        public int id;
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+		public int CEP;
         public String Endereco;
         public int Numero;
         public String Complemento;
         public String Bairro;
         public String Cidade;
         public String Estado;
+        
+        public  String nome;
+    	public int cpf;
+    	public int telefone;
+    	public String email;
+    	public String getEndereco() {
+			return Endereco;
+		}
 
+		public void setEndereco(String endereco) {
+			Endereco = endereco;
+		}
+		public String sexo;
+    	public int dataNascimento;
+    	public String estadoCivil;
+
+    	public void Info2(String CEP, String Endereco, String Numero, String Compl, String Bairro1, String Cidade1, String Estado1){
+        	this.CEP = Integer.parseInt(CEP);
+		this.Endereco = Endereco;
+                this.Numero = Integer.parseInt(Numero);
+		this.Complemento = Compl;
+		this.Bairro = Bairro1;
+                this.Cidade = Cidade1;
+                this.Estado = Estado1;   
+    }
+    public void info(String nome, String cpf, String email, String telefone, String sexo, String dataN,String estadoC) {
+		this.nome = nome;
+		this.cpf = Integer.parseInt(cpf);
+		this.email = email;
+		this.telefone = Integer.parseInt(telefone);
+		this.sexo = sexo;
+		this.dataNascimento = Integer.parseInt(dataN);
+		this.estadoCivil = estadoC;
+	}
 
     /**
      * @return the CEP
@@ -96,25 +137,9 @@ public class Cliente {
         this.Estado = Estado;
     }
     
-    public void Info2(String CEP, String Endereco, String Numero, String Compl, String Bairro1, String Cidade1, String Estado1){
-        	this.CEP = Integer.parseInt(CEP);
-		this.Endereco = Endereco;
-                this.Numero = Integer.parseInt(Numero);
-		this.Complemento = Compl;
-		this.Bairro = Bairro1;
-                this.Cidade = Cidade1;
-                this.Estado = Estado1;   
-    }
     
-    //dados basicos
-        public  String nome;
-	public int cpf;
-	public int telefone;
-	public String endereco;
-	public String email;
-	public String sexo;
-	public int dataNascimento;
-	public String estadoCivil;
+    
+        
         
 	public String getNome() {
 		return nome;
@@ -133,12 +158,6 @@ public class Cliente {
 	}
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
-	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
 	}
 	public String getEmail() {
 		return email;
@@ -164,14 +183,6 @@ public class Cliente {
 	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	public void info(String nome, String cpf, String email, String telefone, String sexo, String dataN,String estadoC) {
-		this.nome = nome;
-		this.cpf = Integer.parseInt(cpf);
-                this.email = email;
-		this.telefone = Integer.parseInt(telefone);
-		this.sexo = sexo;
-                this.dataNascimento = Integer.parseInt(dataN);
-                this.estadoCivil = estadoC;
-	}
+	
         
 }

@@ -1,9 +1,16 @@
-package DAO;
+package Model;
 
 public class Vendas {
 
-    String formaDePagamento;
-    String dataVenda;
+	public int id;
+	String formaDePagamento;
+	String dataVenda;
+    public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 
     /**
      *

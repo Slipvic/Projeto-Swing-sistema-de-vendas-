@@ -4,8 +4,10 @@
  */
 package Views;
 import Utils.validadorProdutos;
-import DAO.Produto;
+
 import javax.swing.JOptionPane;
+
+import Model.Produto;
 /**
  *
  * @author Pichau
