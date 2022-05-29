@@ -161,8 +161,7 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginEntrarActionPerformed
-        Login TelaLogin = new Login();
-        TelaLogin.setVisible(true);
+
     }//GEN-LAST:event_LoginEntrarActionPerformed
 
     private void LoginSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginSairActionPerformed
@@ -170,13 +169,13 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginSairActionPerformed
 
     private void DadosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DadosClienteActionPerformed
-        DadosCliente dados = new DadosCliente();
+        cadastrarClientes dados = new cadastrarClientes();
         dados.setLocationRelativeTo(null);
         dados.setVisible(true);
     }//GEN-LAST:event_DadosClienteActionPerformed
 
     private void ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProdutosActionPerformed
-        Produtos products = new Produtos();
+        cadastrarProdutos products = new cadastrarProdutos();
         products.setLocationRelativeTo(null);
         products.setVisible(true);
     }//GEN-LAST:event_ProdutosActionPerformed

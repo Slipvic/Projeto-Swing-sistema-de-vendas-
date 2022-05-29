@@ -14,9 +14,9 @@ import Utils.validadorClientes;
  *
  * @author victor.hmoreira3
  */
-public class DadosCliente extends javax.swing.JFrame {
+public class cadastrarClientes extends javax.swing.JFrame {
    
-    public DadosCliente() {
+    public cadastrarClientes() {
         initComponents();
     }
     /**
@@ -400,7 +400,15 @@ public class DadosCliente extends javax.swing.JFrame {
     private void EstadoCivilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EstadoCivilActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EstadoCivilActionPerformed
-
+            public void limparDados1 (){
+        Cep.setText("");
+        Endereco.setText("");
+        Numero.setText("");
+        Complemento.setText("");
+        Bairro.setText("");
+        Cidade.setText("");
+        Estado.setText("");
+    }
     private void ConcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConcluirActionPerformed
     validadorClientes validador2 = new validadorClientes();
         
@@ -416,6 +424,7 @@ public class DadosCliente extends javax.swing.JFrame {
     Cliente dados2 = new Cliente();
     dados2.Info2(CEP, Endereco1, Num, Compl, Bairro1, Cidade1, Estado1);
     JOptionPane.showMessageDialog(null, "Cadastro Concluido!");
+    limparDados1();
     }
         
         
@@ -436,7 +445,14 @@ public class DadosCliente extends javax.swing.JFrame {
     private void MasculinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MasculinoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MasculinoActionPerformed
-
+            public void limparDados2 (){
+        Nome.setText("");
+        CPF.setText("");
+        Email.setText("");
+        Telefone.setText("");
+        Data.setText("");
+        EstadoCivil.setSelectedIndex(0);
+    }
     private void avancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_avancarActionPerformed
        validadorClientes validador = new validadorClientes();
        
@@ -455,6 +471,7 @@ public class DadosCliente extends javax.swing.JFrame {
        Cliente dados = new Cliente();
        dados.info(nome, cpf, email, telefone, sexo, dataN, estadoC);
        JOptionPane.showMessageDialog(null, "Dados salvos.");
+       limparDados2();
     }
     }//GEN-LAST:event_avancarActionPerformed
 
@@ -483,14 +500,18 @@ public class DadosCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DadosCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(cadastrarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -499,7 +520,7 @@ public class DadosCliente extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DadosCliente().setVisible(true);
+                new cadastrarClientes().setVisible(true);
             }
         });
     }
