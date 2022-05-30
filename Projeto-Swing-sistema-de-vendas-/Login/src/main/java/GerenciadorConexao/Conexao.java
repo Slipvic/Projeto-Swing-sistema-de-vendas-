@@ -13,7 +13,7 @@ public static Connection abreConexao(){
         Connection conexao = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/NOMEBASEDADOS?useTimezone=true&serverTimezone=UTC";
+            String url = "jdbc:mysql://localhost:3306/farmacia?useTimezone=true&serverTimezone=UTC";
 
             String user = "root";
 

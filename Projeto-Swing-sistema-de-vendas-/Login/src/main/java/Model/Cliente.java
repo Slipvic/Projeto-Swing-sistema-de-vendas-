@@ -4,13 +4,7 @@ public class Cliente {
     
         //dados residenciais
         public int id;
-		public int getId() {
-			return id;
-		}
-
-		public void setId(int id) {
-			this.id = id;
-		}
+		
 		public int CEP;
         public String Endereco;
         public int Numero;
@@ -23,6 +17,14 @@ public class Cliente {
     	public int cpf;
     	public int telefone;
     	public String email;
+    	
+    	public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
     	public String getEndereco() {
 			return Endereco;
 		}
@@ -31,7 +33,7 @@ public class Cliente {
 			Endereco = endereco;
 		}
 		public String sexo;
-    	public int dataNascimento;
+    	public String dataNascimento;
     	public String estadoCivil;
 
     	public void Info2(String CEP, String Endereco, String Numero, String Compl, String Bairro1, String Cidade1, String Estado1){
@@ -49,7 +51,7 @@ public class Cliente {
 		this.email = email;
 		this.telefone = Integer.parseInt(telefone);
 		this.sexo = sexo;
-		this.dataNascimento = Integer.parseInt(dataN);
+		this.dataNascimento = dataN;
 		this.estadoCivil = estadoC;
 	}
 
@@ -171,10 +173,10 @@ public class Cliente {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	public int getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(int dataDeNascimento) {
+	public void setDataNascimento(String dataDeNascimento) {
 		this.dataNascimento = dataDeNascimento;
 	}
 	public String getEstadoCivil() {

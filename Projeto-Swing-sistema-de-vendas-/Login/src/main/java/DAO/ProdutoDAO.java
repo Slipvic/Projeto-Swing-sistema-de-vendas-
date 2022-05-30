@@ -22,7 +22,7 @@ public class ProdutoDAO {
 		
 		try {
 			conexao = GerenciadorConexao.Conexao.abreConexao();
-			instrucaoSQL = conexao.prepareStatement("INSERT INTO Produto (Codigo, Nome, Quantidade, Valor_Compra, ValorVenda, Fornecedor) VALUES(?,?,?,?,?,?)" , Statement.RETURN_GENERATED_KEYS);
+			instrucaoSQL = conexao.prepareStatement("INSERT INTO Produto (Codigo, Nome, Quantidade, Valor_Compra, Valor_Venda, Fornecedor) VALUES(?,?,?,?,?,?)" , Statement.RETURN_GENERATED_KEYS);
 			
 			instrucaoSQL.setInt(1, p.getCodigo());
 			instrucaoSQL.setString(2, p.getProduto());
