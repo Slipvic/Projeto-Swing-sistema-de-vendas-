@@ -30,11 +30,11 @@ public class ProdutoDAO {
 			conexao = GerenciadorConexao.Conexao.abreConexao();
 			instrucaoSQL = conexao.prepareStatement("INSERT INTO Produto (Codigo, Nome, Quantidade, Valor_Compra, Valor_Venda, Fornecedor) VALUES(?,?,?,?,?,?)" , Statement.RETURN_GENERATED_KEYS);
 			
-			instrucaoSQL.setInt(1, p.getCodigo());
+			instrucaoSQL.setString(1, p.getCodigo());
 			instrucaoSQL.setString(2, p.getProduto());
-			instrucaoSQL.setInt(3, p.getQuantidade());
-			instrucaoSQL.setDouble(4, p.getValorC());
-			instrucaoSQL.setDouble(5, p.getValorV());
+			instrucaoSQL.setString(3, p.getQuantidade());
+			instrucaoSQL.setString(4, p.getValorC());
+			instrucaoSQL.setString(5, p.getValorV());
 			instrucaoSQL.setString(6, p.getFornecedor());
 			
 			int linhasAfetadas = instrucaoSQL.executeUpdate();
@@ -44,7 +44,7 @@ public class ProdutoDAO {
 				retorno = true;
 				ResultSet generatedKeys = instrucaoSQL.getGeneratedKeys(); //Recupero o ID do cliente
 			if (generatedKeys.next()) {
-				p.setId(generatedKeys.getInt(1));
+				p.setId(generatedKeys.getString(1));
 			}else 
 			{
 			throw new SQLException("Falha ao obter o ID do cliente!");
@@ -93,11 +93,11 @@ public class ProdutoDAO {
 
             while (rs.next()) {
                 Produto farmaco = new Produto();
-                farmaco.setCodigo(rs.getInt("Codigo Produto"));
+                farmaco.setCodigo(rs.getString("Codigo Produto"));
                 farmaco.setProduto(rs.getString("Nome"));
-                farmaco.setQuantidade(rs.getInt("Estoque"));
-                farmaco.setValorC(rs.getInt("Valor"));
-                farmaco.setValorV(rs.getInt("Revenda"));
+                farmaco.setQuantidade(rs.getString("Estoque"));
+                farmaco.setValorC(rs.getString("Valor"));
+                farmaco.setValorV(rs.getString("Revenda"));
                 farmaco.setFornecedor(rs.getString("Fornecedor"));
                 
                 farmacos.add(farmaco);

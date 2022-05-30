@@ -6,27 +6,27 @@ package Model;
 
 public class Produto {
     
-public int id;
-public int Codigo;
+public String id;
+public String Codigo;
 public String Produto;
-public int Quantidade;
-public double valorC;
-public double valorV;
+public String Quantidade;
+public String valorC;
+public String valorV;
 public String Fornecedor;
 
 
-        public int getId() {
+        public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-        public void setCodigo(int codigo) {
+        public void setCodigo(String codigo) {
 		Codigo = codigo;
 	}
-        public int getCodigo() {
+        public String getCodigo() {
 		return Codigo;
 	}
 
@@ -34,15 +34,15 @@ public String Fornecedor;
 		Produto = produto;
 	}
 
-	public void setQuantidade(int quantidade) {
+	public void setQuantidade(String quantidade) {
 		Quantidade = quantidade;
 	}
 
-	public void setValorC(double valorC) {
+	public void setValorC(String valorC) {
 		this.valorC = valorC;
 	}
 
-	public void setValorV(double valorV) {
+	public void setValorV(String valorV) {
 		this.valorV = valorV;
 	}
         
@@ -50,15 +50,15 @@ public String Fornecedor;
 		return Produto;
 	}
 
-	public int getQuantidade() {
+	public String getQuantidade() {
 		return Quantidade;
 	}
 
-	public double getValorC() {
+	public String getValorC() {
 		return valorC;
 	}
 
-	public double getValorV() {
+	public String getValorV() {
 		return valorV;
 	}
 
@@ -71,11 +71,11 @@ public String Fornecedor;
 	}
     
         public void dadosProduto(String Codigo, String Produto, String Quantidade, String valorC, String valorV, String Fornecedor){
-           this.Codigo = Integer.parseInt(Codigo);
+           this.Codigo = Codigo;
            this.Produto = Produto;
-           this.Quantidade = Integer.parseInt(Quantidade);
-           this.valorC = Double.parseDouble(valorC);
-           this.valorV = Double.parseDouble(valorV);
+           this.Quantidade = Quantidade;
+           this.valorC = valorC;
+           this.valorV = valorV;
            this.Fornecedor = Fornecedor;
         }
 }

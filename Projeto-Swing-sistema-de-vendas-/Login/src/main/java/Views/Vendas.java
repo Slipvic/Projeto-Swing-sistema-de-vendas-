@@ -420,9 +420,9 @@ public class Vendas extends javax.swing.JFrame {
             String nome = Produto.getText();
             int quantidades = Integer.parseInt(Quantidade.getText());
 
-            double valor = produto.getValorV();
+            String valor = produto.getValorV();
 
-            valor = valor * quantidades;
+           // valor = valor * quantidades;
 
             boolean jaExiste = false;
 

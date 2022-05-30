@@ -4,7 +4,7 @@
  */
 package Views;
 import Utils.validadorProdutos;
-
+import Controller.Controller;
 import javax.swing.JOptionPane;
 
 import Model.Produto;
@@ -254,7 +254,8 @@ public class cadastrarProdutos extends javax.swing.JFrame {
        
        if(validar.novoProduto(Codigo, Produto, Quantidade, valorC, valorV, listaFornecedor)){
            Produto dadosP = new Produto();
-           dadosP.dadosProduto(CodigoP, Product, Qtd, Compra, Venda, Fornecedor);
+           Controller.dadosProduto(CodigoP, Product, Qtd, Compra, Venda, Fornecedor);
+           //dadosP.dadosProduto(CodigoP, Product, Qtd, Compra, Venda, Fornecedor);
            JOptionPane.showMessageDialog(null, "Informações salvas!");
            limparCampos();
        }

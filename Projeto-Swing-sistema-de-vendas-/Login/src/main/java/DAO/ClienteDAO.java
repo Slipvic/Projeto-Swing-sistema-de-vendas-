@@ -26,13 +26,13 @@ public class ClienteDAO {
 			conexao = GerenciadorConexao.Conexao.abreConexao();
 			instrucaoSQL = conexao.prepareStatement("INSERT INTO Cliente (Cep, Endereco, Numero, Complemento, Bairro, Cidade, Estado) VALUES(?,?,?,?,?,?,?)" , Statement.RETURN_GENERATED_KEYS);
 			
-			instrucaoSQL.setInt(10, p.getCEP());
-			instrucaoSQL.setString(4, p.getEndereco());
-			instrucaoSQL.setInt(11, p.getNumero());
-			instrucaoSQL.setString(12, p.getComplemento());
-			instrucaoSQL.setString(13, p.getBairro());
-			instrucaoSQL.setString(14, p.getCidade());
-			instrucaoSQL.setString(15, p.getEstado());
+			instrucaoSQL.setString(1, p.getCEP());
+			instrucaoSQL.setString(2, p.getEndereco());
+			instrucaoSQL.setString(3, p.getNumero());
+			instrucaoSQL.setString(4, p.getComplemento());
+			instrucaoSQL.setString(5, p.getBairro());
+			instrucaoSQL.setString(6, p.getCidade());
+			instrucaoSQL.setString(7, p.getEstado());
 			
 			int linhasAfetadas = instrucaoSQL.executeUpdate();
 			
@@ -85,12 +85,12 @@ public class ClienteDAO {
 			instrucaoSQL = conexao.prepareStatement("INSERT INTO Cliente (Nome, Cpf, E_mail, Telefone, Sexo, Data_de_Nascimento, Estado_Civil) VALUES(?,?,?,?,?,?,?)" , Statement.RETURN_GENERATED_KEYS);
 			
 			instrucaoSQL.setString(1, p.getNome());
-			instrucaoSQL.setInt(2, p.getCpf());
-			instrucaoSQL.setString(5, p.getEmail());
-			instrucaoSQL.setInt(3, p.getTelefone());
-			instrucaoSQL.setString(6, p.getSexo());
-			instrucaoSQL.setString(7, p.getDataNascimento());
-			instrucaoSQL.setString(8, p.getEstadoCivil());
+			instrucaoSQL.setString(2, p.getCpf());
+			instrucaoSQL.setString(3, p.getEmail());
+			instrucaoSQL.setString(4, p.getTelefone());
+			instrucaoSQL.setString(5, p.getSexo());
+			instrucaoSQL.setString(6, p.getDataNascimento());
+			instrucaoSQL.setString(7, p.getEstadoCivil());
 			
 			int linhasAfetadas = instrucaoSQL.executeUpdate();
 			

@@ -5,17 +5,17 @@ public class Cliente {
         //dados residenciais
         public int id;
 		
-		public int CEP;
+	public String CEP;
         public String Endereco;
-        public int Numero;
+        public String Numero;
         public String Complemento;
         public String Bairro;
         public String Cidade;
         public String Estado;
         
-        public  String nome;
-    	public int cpf;
-    	public int telefone;
+        public String nome;
+    	public String cpf;
+    	public String telefone;
     	public String email;
     	
     	public int getId() {
@@ -37,9 +37,9 @@ public class Cliente {
     	public String estadoCivil;
 
     	public void Info2(String CEP, String Endereco, String Numero, String Compl, String Bairro1, String Cidade1, String Estado1){
-        	this.CEP = Integer.parseInt(CEP);
+        	this.CEP = CEP;
 		this.Endereco = Endereco;
-                this.Numero = Integer.parseInt(Numero);
+                this.Numero = Numero;
 		this.Complemento = Compl;
 		this.Bairro = Bairro1;
                 this.Cidade = Cidade1;
@@ -47,9 +47,9 @@ public class Cliente {
     }
     public void info(String nome, String cpf, String email, String telefone, String sexo, String dataN,String estadoC) {
 		this.nome = nome;
-		this.cpf = Integer.parseInt(cpf);
+		this.cpf = cpf;
 		this.email = email;
-		this.telefone = Integer.parseInt(telefone);
+		this.telefone = telefone;
 		this.sexo = sexo;
 		this.dataNascimento = dataN;
 		this.estadoCivil = estadoC;
@@ -58,28 +58,28 @@ public class Cliente {
     /**
      * @return the CEP
      */
-    public int getCEP() {
+    public String getCEP() {
         return CEP;
     }
 
     /**
      * @param CEP the CEP to set
      */
-    public void setCEP(int CEP) {
+    public void setCEP(String CEP) {
         this.CEP = CEP;
     }
 
     /**
      * @return the Numero
      */
-    public int getNumero() {
+    public String getNumero() {
         return Numero;
     }
 
     /**
      * @param Numero the Numero to set
      */
-    public void setNumero(int Numero) {
+    public void setNumero(String Numero) {
         this.Numero = Numero;
     }
 
@@ -149,16 +149,16 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 	public String getEmail() {

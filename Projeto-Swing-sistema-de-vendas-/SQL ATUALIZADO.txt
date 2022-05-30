@@ -2,13 +2,13 @@ create database farmacia;
 use farmacia;
 
 CREATE TABLE Cliente (
-    Nome VARCHAR(10),
+    Nome VARCHAR(255),
     Cpf VARCHAR(255),
     Telefone VARCHAR(255),
     Endereco VARCHAR(255),
     E_mail VARCHAR(255),
     Sexo VARCHAR(255),
-    Data_de_Nascimento VARCHAR(8),
+    Data_de_Nascimento VARCHAR(255),
     Estado_Civil VARCHAR(255),
     Id int PRIMARY KEY auto_increment,
     Cep VARCHAR(255),
@@ -21,11 +21,11 @@ CREATE TABLE Cliente (
 );
 
 CREATE TABLE Produto (
-    Codigo int,
+    Codigo  VARCHAR(255),
     Nome VARCHAR (255),
-    Quantidade int,
-    Valor_Compra int,
-    Valor_Venda int,
+    Quantidade  VARCHAR(255),
+    Valor_Compra  VARCHAR(255),
+    Valor_Venda  VARCHAR(255),
     Fornecedor VARCHAR(255),
     id int PRIMARY KEY auto_increment
 );

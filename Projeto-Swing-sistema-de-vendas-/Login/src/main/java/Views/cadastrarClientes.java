@@ -8,8 +8,8 @@ import java.text.ParseException;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.text.MaskFormatter;
-
 import Model.Cliente;
+import Controller.Controller;
 import Utils.validadorClientes;
 /**
  *
@@ -423,7 +423,8 @@ public class cadastrarClientes extends javax.swing.JFrame {
     
     if(validador2.validarE(Cep, Endereco, Numero, Complemento, Bairro, Cidade, Estado)){
     Cliente dados2 = new Cliente();
-    dados2.Info2(CEP, Endereco1, Num, Compl, Bairro1, Cidade1, Estado1);
+    Controller.info2(CEP, Endereco1, Num, Compl, Bairro1, Cidade1, Estado1);
+    //dados2.Info2(CEP, Endereco1, Num, Compl, Bairro1, Cidade1, Estado1);
     JOptionPane.showMessageDialog(null, "Cadastro Concluido!");
     limparDados1();
     }
@@ -470,7 +471,8 @@ public class cadastrarClientes extends javax.swing.JFrame {
         
        if(validador.validarC(Nome, CPF, Email, Telefone, sexo, Data, EstadoCivil)){
        Cliente dados = new Cliente();
-       dados.info(nome, cpf, email, telefone, sexo, dataN, estadoC);
+       Controller.salvarCliente(nome, cpf, email, telefone, sexo, dataN, estadoC);
+       //dados.info(nome, cpf, email, telefone, sexo, dataN, estadoC);
        JOptionPane.showMessageDialog(null, "Dados salvos.");
        limparDados2();
     }

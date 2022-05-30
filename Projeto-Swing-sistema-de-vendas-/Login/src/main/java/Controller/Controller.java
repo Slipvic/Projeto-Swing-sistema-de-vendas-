@@ -12,7 +12,7 @@ import java.util.List;
 public class Controller {
 	
 	//Cliente
-	public static boolean salvarCliente(String nome, int cpf, String email, int telefone, String sexo, String dataN,String estadoC) {
+	public static boolean salvarCliente(String nome, String cpf, String email, String telefone, String sexo, String dataN,String estadoC) {
 		Cliente obj = new Cliente();
 		obj.setNome(nome);
 		obj.setCpf(cpf);
@@ -27,7 +27,7 @@ public class Controller {
 		
 	}
 	
-	public static boolean info2(int CEP, String Endereco, int Numero, String Compl, String Bairro1, String Cidade1, String Estado1) {
+	public static boolean info2(String CEP, String Endereco, String Numero, String Compl, String Bairro1, String Cidade1, String Estado1) {
 		Cliente obj = new Cliente();
 		obj.setCEP(CEP);
 		obj.setEndereco(Endereco);
@@ -43,7 +43,7 @@ public class Controller {
 	
 	//Produto
 	
-	public static boolean dadosProduto(int Codigo, String Produto, int Quantidade, int valorC, int valorV, String Fornecedor) {
+	public static boolean dadosProduto(String Codigo, String Produto, String Quantidade, String valorC, String valorV, String Fornecedor) {
 		Model.Produto obj = new Model.Produto();
 		obj.setCodigo(Codigo);
 		obj.setProduto(Produto);
