@@ -2,6 +2,8 @@ package Controller;
 
 import DAO.ClienteDAO;
 import DAO.ProdutoDAO;
+import DAO.VendasDAO;
+import DAO.VendedorDAO;
 import Model.Cliente;
 import Model.Produto;
 import Model.Vendas;
@@ -41,7 +43,7 @@ public class Controller {
 	
 	//Produto
 	
-	public static boolean dadosProduto(String Codigo, String Produto, String Quantidade, String valorC, String valorV, String Fornecedor) {
+	public static boolean dadosProduto(int Codigo, String Produto, int Quantidade, int valorC, int valorV, String Fornecedor) {
 		Model.Produto obj = new Model.Produto();
 		obj.setCodigo(Codigo);
 		obj.setProduto(Produto);
@@ -51,7 +53,7 @@ public class Controller {
 		obj.setFornecedor(Fornecedor);
 		
 		
-		return Model.Produto.dadosProduto(obj);
+		return ProdutoDAO.dadosProduto(obj);
 		
 	}
 	
@@ -62,7 +64,7 @@ public class Controller {
 		obj.setFormaDePagamento(formaDePagamento);
 		obj.setDataVenda(dataVenda);
 		
-		return Vendas.Venda(obj);
+		return VendasDAO.venda(obj);
 		
 	}
 	
@@ -73,10 +75,10 @@ public class Controller {
 		obj.setSenha(senha);
 		
 		
-		return Model.Vendedor.Vendedor(obj);
+		return VendedorDAO.vendedor(obj);
 		
 	}
-           public static List<Produto> pesquisaCodigo(int id) {
+    public static List<Produto> pesquisaCodigo(int id) {
 
         return ProdutoDAO.pesquisarCod(id);
         
