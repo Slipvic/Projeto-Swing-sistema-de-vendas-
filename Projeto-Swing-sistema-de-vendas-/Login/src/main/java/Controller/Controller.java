@@ -59,7 +59,7 @@ public class Controller {
 	
 	//Vendas
 	
-	public static boolean Venda(String formaDePagamento, String dataVenda) {
+	/*public static boolean Venda(String formaDePagamento, String dataVenda) {
 		Vendas obj = new Vendas();
 		obj.setFormaDePagamento(formaDePagamento);
 		obj.setDataVenda(dataVenda);
@@ -67,17 +67,17 @@ public class Controller {
 		return VendasDAO.venda(obj);
 		
 	}
-	
+	*/
 	//Vendedor
-	public static boolean Vendedor(String usuario, String senha) {
+	/*public static boolean Vendedor(String usuario, String senha) {
 		Model.Vendedor obj = new Model.Vendedor();
 		obj.setUsuario(usuario);
 		obj.setSenha(senha);
 		
 		
 		return VendedorDAO.vendedor(obj);
-		
 	}
+	*/
     public static List<Produto> pesquisaCodigo(int id) {
 
         return ProdutoDAO.pesquisarCod(id);
