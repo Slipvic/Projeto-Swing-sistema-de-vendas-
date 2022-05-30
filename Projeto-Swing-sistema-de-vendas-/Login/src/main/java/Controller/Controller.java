@@ -1,7 +1,10 @@
 package Controller;
 
+import DAO.ProdutoDAO;
 import Model.Cliente;
+import Model.Produto;
 import Model.Vendas;
+import java.util.List;
 
 public class Controller {
 	
@@ -72,6 +75,9 @@ public class Controller {
 		return Model.Vendedor.Vendedor(obj);
 		
 	}
-	
+           public static List<Produto> pesquisaCodigo(int id) {
 
+        return ProdutoDAO.pesquisarCod(id);
+        
+    }
 }

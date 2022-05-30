@@ -1,6 +1,10 @@
 package Model;
 
 public class Vendedor {
+
+    public static Vendedor(Vendedor obj) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     String nome;
 	String usuario;
 	String senha;

@@ -5,9 +5,17 @@ package Model;
 
 
 public class Produto {
+    
+public int id;
+public int Codigo;
+public String Produto;
+public int Quantidade;
+public double valorC;
+public double valorV;
+public String Fornecedor;
 
-	public int id;
-    public int getId() {
+
+        public int getId() {
 		return id;
 	}
 
@@ -15,10 +23,11 @@ public class Produto {
 		this.id = id;
 	}
 
-	public int Codigo;
-    public String Produto;
-    public void setCodigo(int codigo) {
+        public void setCodigo(int codigo) {
 		Codigo = codigo;
+	}
+        public int getCodigo() {
+		return Codigo;
 	}
 
 	public void setProduto(String produto) {
@@ -36,11 +45,7 @@ public class Produto {
 	public void setValorV(double valorV) {
 		this.valorV = valorV;
 	}
-
-	public int getCodigo() {
-		return Codigo;
-	}
-
+        
 	public String getProduto() {
 		return Produto;
 	}
@@ -64,11 +69,6 @@ public class Produto {
 	public void setFornecedor(String fornecedor) {
 		Fornecedor = fornecedor;
 	}
-
-	public int Quantidade;
-    public double valorC;
-    public double valorV;
-    public String Fornecedor;
     
         public void dadosProduto(String Codigo, String Produto, String Quantidade, String valorC, String valorV, String Fornecedor){
            this.Codigo = Integer.parseInt(Codigo);

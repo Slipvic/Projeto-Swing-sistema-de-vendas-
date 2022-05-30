@@ -1,5 +1,6 @@
 package DAO;
 
+import GerenciadorConexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import Model.Produto;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ProdutoDAO {
 	@SuppressWarnings("finally")
@@ -60,5 +65,46 @@ public class ProdutoDAO {
 			return retorno;
 		}
 	}
+        public static List<Produto> pesquisarCod(int codigo) {
+
+        Connection conexao = Conexao.abreConexao();
+        PreparedStatement comando;
+        ResultSet rs = null;
+
+        List< Produto> farmacos = new ArrayList();
+
+        try {
+            comando = conexao.prepareStatement("SELECT * FROM produtos WHERE id_produto = ?");
+            
+            comando.setInt(1, codigo);
+            
+            rs = comando.executeQuery();
+
+            while (rs.next()) {
+                Produto farmaco = new Produto();
+                farmaco.setCodigo(rs.getInt("Codigo Produto"));
+                farmaco.setProduto(rs.getString("Nome"));
+                farmaco.setQuantidade(rs.getInt("Estoque"));
+                farmaco.setValorC(rs.getInt("Valor"));
+                farmaco.setValorV(rs.getInt("Revenda"));
+                farmaco.setFornecedor(rs.getString("Fornecedor"));
+                
+                farmacos.add(farmaco);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (rs != null)
+                try {
+                rs.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return farmacos;
+
+    }
 	
 }
