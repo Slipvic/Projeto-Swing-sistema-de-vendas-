@@ -14,6 +14,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ProdutoDAO {
+	
+	/**
+	 * @see Controller.Controller, Model.Produto
+	 * @param p parâmetro do tipo Produto
+	 * @return Insere um dado produto no banco de dados
+	 */
 	@SuppressWarnings("finally")
 	public static boolean dadosProduto(Produto p) {
 		boolean retorno = false;
@@ -65,6 +71,11 @@ public class ProdutoDAO {
 			return retorno;
 		}
 	}
+	/**
+	 * 
+	 * @param codigo
+	 * @return permite pesquisar um dado produto através do seu código
+	 */
         public static List<Produto> pesquisarCod(int codigo) {
 
         Connection conexao = Conexao.abreConexao();

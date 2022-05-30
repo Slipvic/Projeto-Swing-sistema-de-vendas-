@@ -6,9 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Controller.Controller;
 import Model.Cliente;
 
 public class ClienteDAO {
+	/**
+	 * @see Controller.Controller, Model.Cliente
+	 * @param p objeto do tipo Cliente
+	 * @return Retorna instruções de criação da localização do cliente para o banco de dados
+	 */
+	
 	@SuppressWarnings("finally")
 	public static boolean info2 (Cliente p) {
 		boolean retorno = false;
@@ -61,6 +68,12 @@ public class ClienteDAO {
 			return retorno;
 		}
 	}
+	
+	/**
+	 * @see Controller.Controller, Model.Cliente
+	 * @param p Objeto do tipo Cliente
+	 * @return Retorna instruções de criação do cliente para o banco de dados
+	 */
 	@SuppressWarnings("finally")
 	public static boolean info (Cliente p) {
 		boolean retorno = false;
